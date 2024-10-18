@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #ddd;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: white;
+            --code-background-color: #4a4a4a;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://champsduplaisir.com/juice.css">
+    
+<link rel="stylesheet" href="https://champsduplaisir.com/champsduplaisir.css">
+<link rel="stylesheet" href="https://champsduplaisir.com/event-calendar.min.css">
+<script src="https://champsduplaisir.com/event-calendar.min.js"></script>
+<script src="https://champsduplaisir.com/papaparse.min.js"></script>
+
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="https://champsduplaisir.com/">
+    <div class="logo">
+        <img src="https://champsduplaisir.com/logochampsduplaisir.png" alt="logo">
+        
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="/contrats">Les Contrats</a>
+        
+        <a class="nav-item subtitle-text" href="/distributions">Calendrier des distributions</a>
+        
+        <a class="nav-item subtitle-text" href="/producteurs">Nos producteurs engagés !</a>
+        
+        <a class="nav-item subtitle-text" href="/contact">Contact</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+        <section class="text-center">
+            <h1 class="heading-text" style="font-size: 50px">
+                Les Champs du Plaisir
+            </h1>
+            <h3 class="title-text">
+                Distribution le mardi de 18h30 à 19h15
+            </h3>
+            <h3 class="title-text">
+                L'escale, 2 rue Antonio Vivaldi
+            </h3>
+            <h3 class="title-text">
+                91280 Saint-Pierre-du-Perray
+            </h3>
+        </section>
+        <img class="hero-image" src="https://champsduplaisir.com/hero.jpg">
+
+        <div class="explore-more text"
+            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+            En savoir plus ⇩
+        </div>
+        <style>
+            .hero section {
+                padding: 0 5rem;
+            }
+
+            @media screen and (max-width: 768px) {
+                .hero section {
+                    padding: 0 2rem;
+                }
+
+                .hero-image {
+                    display: none
+                }
+            }
+        </style>
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#puis-je-annuler-mon-contrat-en-cours-d-annee">Puis-je annuler mon contrat en cours d’année ?</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#mais-si-je-veux-tester">Mais si je veux tester ?</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#et-si-je-ne-peux-pas-venir-et-pendant-les-grandes-vacances">Et si je ne peux pas venir ? Et pendant les grandes vacances ?</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#suis-je-oblige-de-prendre-tous-les-contrats">Suis-je obligé de prendre tous les contrats ?</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#pour-les-legumes-j-ai-peur-d-avoir-que-des-topinambours">Pour les légumes, j’ai peur d’avoir que des topinambours !</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#mais-puis-je-au-moins-savoir-a-l-avance-ce-qu-il-y-aura-afin-d-anticiper">Mais puis-je au moins savoir à l’avance ce qu’il y aura afin d’anticiper ?</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://champsduplaisir.com/#est-ce-qu-au-moins-je-m-y-retrouve-financierement">Est-ce qu’au moins je m’y retrouve financièrement ?</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<p><em>Vous n’avez pas encore franchi le pas ? Vous avez peur de vous engager ? Pas de problème on répond aux questions que nous nous sommes tous posés !</em></p>
+<h1 id="puis-je-annuler-mon-contrat-en-cours-d-annee">Puis-je annuler mon contrat en cours d’année ?</h1>
+<p>Eh non ! C’est le principe même d’une AMAP. De la même manière que vous vous abonnez à un magazine sans trop savoir ce que chaque numéro vous réserve, vous vous « abonnez » ici à une « production nourricière » qui permet au paysan de s’organiser.</p>
+<h1 id="mais-si-je-veux-tester">Mais si je veux tester ?</h1>
+<p>Vous pouvez vous abonner en mode « binome » c’est à dire venir une fois sur deux. Votre contrat est donc deux fois moins cher mais vous aurez deux fois loins que si vous prenez un contrat classique, pardi !</p>
+<h1 id="et-si-je-ne-peux-pas-venir-et-pendant-les-grandes-vacances">Et si je ne peux pas venir ? Et pendant les grandes vacances ?</h1>
+<p>De manière exceptionnelle vous pouvez demander à un autre Amapien de récupérer votre panier. Et si vous êtes carrément pas là, eh bien il va falloir trouver votre remplaçant (un voisin, la famille, un autre amapien). Et à vous de voir si vous le donnez (classe !) ou le vendez (lucide !)</p>
+<h1 id="suis-je-oblige-de-prendre-tous-les-contrats">Suis-je obligé de prendre tous les contrats ?</h1>
+<p>Heureusement non ! Nous avons aujourd’hui 5 contrats différents (légumes, pain, miel, fromage, volaille) pour 5 paysans.</p>
+<h1 id="pour-les-legumes-j-ai-peur-d-avoir-que-des-topinambours">Pour les légumes, j’ai peur d’avoir que des topinambours !</h1>
+<p>Depuis 10 ans, notre maraîcher Michel nous propose un panier composé d’au moins 7 variétés différentes. La saisonnalité fait qu’en hiver il y effectivement des légumes racines en quantité. Nous publions la liste des paniers désormais.</p>
+<p>Il arrive que des Amapiens s’échangent des légumes entre eux.</p>
+<h1 id="mais-puis-je-au-moins-savoir-a-l-avance-ce-qu-il-y-aura-afin-d-anticiper">Mais puis-je au moins savoir à l’avance ce qu’il y aura afin d’anticiper ?</h1>
+<p>Notre maraicher est capable de nous dire ce qu’il y aura en gros 15 jours à l’avance. Reste à trouver la modalité afin de nous transmettre l’information. Il est toujours possible de lui demander chaque mardi ! C’est l’avantage de rencontrer son maraicher d’une semaine à l’autre !</p>
+<h1 id="est-ce-qu-au-moins-je-m-y-retrouve-financierement">Est-ce qu’au moins je m’y retrouve financièrement ?</h1>
+<p>Il est difficile de faire un comparatif rigoureux afin de savoir si les légumes bio de l’AMAP sont moins chers qu’ailleurs. Le bio en supermarché est à peu près au même prix mais il est flagrant que ce n’est pas la même qualité !</p>
+<p>En magasin spécialisé, le modèle AMAP semble légèrement moins cher.</p>
+<p>Et l’équivalent en marché local, pas bio, donnerait un léger avantage… mais ce n’est pas en bio !</p>
+<p>En résumé, cela se joue à +/- 10%</p>
+<p><a href="/paniers-en-vrai">Voir nos paniers en vrai</a></p>
+
+
+        </div>
+
+        
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+      Les Champs du Plaisir
+    </small>
+    <small class="subtext">
+       2 rue Antonio Vivaldi – L’escale
+    </small>
+    <small class="subtext">
+       91280 Saint Pierre du Perray
+    </small>
+</footer>
+
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>
