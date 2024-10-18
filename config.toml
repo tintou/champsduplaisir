@@ -23,5 +23,5 @@ juice_extra_menu = [
     { title = "Contact", link = "/contact"}
 ]
 juice_exclude_menu = [
-    "Les Contrats", "Calendrier des distributions", "Nos producteurs engagés !", "Contact"
+    "Les Contrats", "Calendrier des distributions", "Nos producteurs engagés !", "Contact", "Les paniers en vrai"
 ]

@@ -37,3 +37,5 @@ En magasin spécialisé, le modèle AMAP semble légèrement moins cher.
 Et l’équivalent en marché local, pas bio, donnerait un léger avantage… mais ce n’est pas en bio !
 
 En résumé, cela se joue à +/- 10%
+
+[Voir nos paniers en vrai](/paniers-en-vrai)
