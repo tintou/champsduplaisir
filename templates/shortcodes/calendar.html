@@ -1,0 +1,86 @@
+<div id="ec" class="calendar"></div>
+<script type="text/javascript">
+function createEvents(fetchInfo, successCallback, failureCallback) {
+    Papa.parse("{{ source_file | safe }}", {
+        download: true,
+        error: function(err, file)
+        {
+            failureCallback(err);
+        },
+        complete: function(results, file)
+        {
+            let events = new Array();
+            let headers = results.data[0];
+            let content = results.data.slice(1);
+            content.forEach((line, i) => {
+                if (line.length < 4)
+                    return;
+
+                let date_parts = line[2].split("/")
+                let line_date = new Date(date_parts[1] + "/" + date_parts[0] + "/" + date_parts[2]);
+                if (line_date < fetchInfo.start)
+                    return;
+
+                if (line_date > fetchInfo.end)
+                    return;
+
+                line.slice(3).forEach((column, j) => {
+                    if (parseInt(column) > 0) {
+                        let double = "";
+                        console.log(parseInt(column));
+                        if (parseInt(column) > 1) {
+                            double = " (×" + parseInt(column) +")";
+                        }
+
+                        events.push({
+                            title: headers[j+3] + double,
+                            start: line_date,
+                            end: line_date,
+                            allDay: true,
+                            editable: false,
+                            durationEditable: false,
+                            startEditable: false,
+                        });
+                    }
+                });
+            });
+            successCallback(events);
+        }
+    });
+}
+let headertoolbar = {
+    start: 'title',
+    center: '',
+    end: 'listButton today prev,next'
+};
+let ec = new EventCalendar(document.getElementById('ec'), {
+    locale: 'fr',
+    firstDay: 1,
+    view: 'dayGridMonth',
+    nowIndicator: true,
+    buttonText: {close: 'Fermer', dayGridMonth: 'mois', listDay: 'list', listMonth: 'liste', listWeek: 'liste', listYear: 'liste', resourceTimeGridDay: 'ressources', resourceTimeGridWeek: 'ressources', resourceTimelineDay: 'timeline', resourceTimelineMonth: 'timeline', resourceTimelineWeek: 'timeline', timeGridDay: 'jour', timeGridWeek: 'semaine', today: 'Aujourd\'hui'},
+    eventSources: [{events: createEvents}],
+    listDayFormat: { weekday: 'long', day: 'numeric', month: 'long' },
+    listDaySideFormat: { year: 'numeric' },
+    customButtons: {
+        listButton: {
+            text: 'Liste',
+            click: function() {
+                headertoolbar.end = 'calButton today prev,next';
+                ec.setOption('headerToolbar', headertoolbar);
+                ec.setOption('view', 'listMonth');
+            }
+        },
+        calButton: {
+            text: 'Calendrier',
+            click: function() {
+                headertoolbar.end = 'listButton today prev,next';
+                ec.setOption('headerToolbar', headertoolbar);
+                ec.setOption('view', 'dayGridMonth');
+            }
+        }
+    },
+    headerToolbar: headertoolbar
+});
+
+</script>

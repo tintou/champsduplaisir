@@ -1,0 +1,64 @@
+{% extends "juice/templates/index.html" %}
+
+
+{% block sidebar %}
+{% endblock sidebar %}
+{% block content %}
+{{ section.content | safe }}
+{% endblock content %}
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path="champsduplaisir.css") }}">
+<link rel="stylesheet" href="{{ get_url(path="event-calendar.min.css") }}">
+<script src="{{ get_url(path="event-calendar.min.js") }}"></script>
+<script src="{{ get_url(path="papaparse.min.js") }}"></script>
+{% endblock head %}
+{% block hero %}
+        <section class="text-center">
+            <h1 class="heading-text" style="font-size: 50px">
+                Les Champs du Plaisir
+            </h1>
+            <h3 class="title-text">
+                Distribution le mardi de 18h30 à 19h15
+            </h3>
+            <h3 class="title-text">
+                L'escale, 2 rue Antonio Vivaldi
+            </h3>
+            <h3 class="title-text">
+                91280 Saint-Pierre-du-Perray
+            </h3>
+        </section>
+        <img class="hero-image" src="{{ get_url(path="hero.jpg") }}">
+
+        <div class="explore-more text"
+            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+            En savoir plus ⇩
+        </div>
+        <style>
+            .hero section {
+                padding: 0 5rem;
+            }
+
+            @media screen and (max-width: 768px) {
+                .hero section {
+                    padding: 0 2rem;
+                }
+
+                .hero-image {
+                    display: none
+                }
+            }
+        </style>
+{% endblock hero %}
+{% block footer %}
+<footer>
+    <small class="subtext">
+      Les Champs du Plaisir
+    </small>
+    <small class="subtext">
+       2 rue Antonio Vivaldi – L’escale
+    </small>
+    <small class="subtext">
+       91280 Saint Pierre du Perray
+    </small>
+</footer>
+{% endblock footer %}
